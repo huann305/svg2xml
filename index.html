@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG File Uploader</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #343a40;
+    }
+
+    h1 {
+      margin: 20px 0;
+      font-size: 2.5em;
+      text-align: center;
+      color: #007bff;
+    }
+
+    #output {
+      width: 100wh;
+      height: auto;
+      min-height: 100vh;
+      font-size: 24px;
+      color: #495057;
+      background-color: #ffffff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      transition: border-color 0.3s;
+      position: relative;
+    }
+
+    #output:hover {
+      border-color: #0056b3;
+    }
+
+    button {
+      cursor: pointer;
+      margin: 8px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+      font-size: 16px;
+      transition: background-color 0.3s;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    input {
+      margin: 8px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: calc(100% - 22px);
+    }
+
+    #reload {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: #dc3545;
+    }
+
+    #reload:hover {
+      background-color: #c82333;
+    }
+
+    #previewContainer {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 24px;
+      justify-content: center;
+    }
+
+    .preview {
+      width: 150px;
+      height: 150px;
+      margin: 10px;
+      border: 2px solid #007bff;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .preview:hover {
+      transform: scale(1.05);
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    #buttonDownloadFile2{
+      position: fixed;
+      bottom: 24px;
+      right: 148px;
+    }
+  </style>
+</head>
+
+<body id="output">
+  <div>
+    <h1>SVG File Uploader</h1>
+    <div class="button-container">
+      <button id="buttonDownloadFile">Tải xuống</button>
+      <button id="buttonCopyText">Sao chép</button>
+    </div>
+  </div>
+  <div>Kéo tệp SVG vào đây</div>
+  <div id="previewContainer"></div>
+  <div>
+    <div class="button-container">
+      <button id="buttonDownloadFile2">Tải xuống</button>
+      <button id="buttonCopyText2">Sao chép</button>
+    </div>
+  </div>
+  <button id="reload" onclick="window.location.reload()">Làm mới</button>
+  <script src="index.js"></script>
+</body>
+
+</html>
