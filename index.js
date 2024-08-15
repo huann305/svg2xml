@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         constructor(pathData, strokeWidth, fillColor, fillType, strokeColor, strokeType, strokeLineCap, name, className, alpha) {
             this.pathData = pathData;
             this.strokeWidth = strokeWidth;
-            this.fillColor = fillColor;
+            this.fillColor = "#FFFFFF";
             this.fillType = fillType;
             this.strokeColor = strokeColor;
             this.strokeType = strokeType;
@@ -90,10 +90,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function generateXMLContent(listPath, width, height) {
         const pathContent = listPath.map(path => {
-                // android:fillColor="${path.fillColor === "none" ? "#000000" : path.fillColor || "#000000"}"
             return `<path ${path.name ? `android:name="${path.name}"` : ''}
                 android:pathData="${path.pathData}"
-                android:fillColor="#FFFFFF"
+                android:fillColor="${path.fillColor === "none" ? "#000000" : path.fillColor || "#000000"}"
                 android:fillType="evenOdd"${path.strokeColor ? `\nandroid:strokeColor="${path.strokeColor}"` : ''}${path.strokeWidth ? `\nandroid:strokeWidth="${path.strokeWidth}"` : ''}${path.strokeLineCap ? `\nandroid:strokeLineCap="${path.strokeLineCap}"` : ''}${path.strokeType ? `\nandroid:strokeLineJoin="${path.strokeType}"` : ''}${path.alpha != '1' ? `\nandroid:fillAlpha="${path.alpha}"` : ''}${path.alpha != '1' ? `\nandroid:strokeAlpha="${path.alpha}"` : ''}/>`;
         }).join('\n');
 
