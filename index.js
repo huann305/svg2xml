@@ -90,9 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function generateXMLContent(listPath, width, height) {
         const pathContent = listPath.map(path => {
+                // android:fillColor="${path.fillColor === "none" ? "#000000" : path.fillColor || "#000000"}"
             return `<path ${path.name ? `android:name="${path.name}"` : ''}
                 android:pathData="${path.pathData}"
-                android:fillColor="${path.fillColor === "none" ? "#000000" : path.fillColor || "#000000"}"
+                android:fillColor="#FFFFFF"
                 android:fillType="evenOdd"${path.strokeColor ? `\nandroid:strokeColor="${path.strokeColor}"` : ''}${path.strokeWidth ? `\nandroid:strokeWidth="${path.strokeWidth}"` : ''}${path.strokeLineCap ? `\nandroid:strokeLineCap="${path.strokeLineCap}"` : ''}${path.strokeType ? `\nandroid:strokeLineJoin="${path.strokeType}"` : ''}${path.alpha != '1' ? `\nandroid:fillAlpha="${path.alpha}"` : ''}${path.alpha != '1' ? `\nandroid:strokeAlpha="${path.alpha}"` : ''}/>`;
         }).join('\n');
 
