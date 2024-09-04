@@ -102,9 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
             android:height="${height}dp"
             android:viewportWidth="${width}"
             android:viewportHeight="${height}">
-    <path
-        android:pathData="M0 0 H594 V841 H0 Z"
-        android:fillColor="#FFFFFF"/>
+    // <path
+    //     android:pathData="M0 0 H594 V841 H0 Z"
+    //     android:fillColor="#FFFFFF"/>
             ${pathContent}
         </vector>`;
     }
