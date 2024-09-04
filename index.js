@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         constructor(pathData, strokeWidth, fillColor, fillType, strokeColor, strokeType, strokeLineCap, name, className, alpha) {
             this.pathData = pathData;
             this.strokeWidth = strokeWidth;
-            this.fillColor = "#FFFFFF";
+            this.fillColor = fillColor;
             this.fillType = fillType;
             this.strokeColor = strokeColor;
             this.strokeType = strokeType;
