@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         constructor(pathData, strokeWidth, fillColor, fillType, strokeColor, strokeType, strokeLineCap, name, className, alpha) {
             this.pathData = pathData;
             this.strokeWidth = strokeWidth;
-            this.fillColor = fillColor;
+            this.fillColor = "#FFFFFF";
             this.fillType = fillType;
             this.strokeColor = strokeColor;
             this.strokeType = strokeType;
@@ -102,9 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
             android:height="${height}dp"
             android:viewportWidth="${width}"
             android:viewportHeight="${height}">
-<!--    // <path-->
-<!--    //     android:pathData="M0 0 H594 V841 H0 Z"-->
-<!--    //     android:fillColor="#FFFFFF"/>-->
+            <path
+                android:pathData="M0 0 H594 V841 H0 Z"
+                android:fillColor="#FFFFFF"/>
             ${pathContent}
         </vector>`;
     }
